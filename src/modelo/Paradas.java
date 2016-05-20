@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 public class Paradas {
   private String nomParada;
+  private Paradas posicionParada;
 
   private ArrayList<Lineas> lineas;
 
@@ -13,5 +14,9 @@ public class Paradas {
     this.nomParada = nomParada;
 
     lineas = new ArrayList<>();
+  }
+
+  public void addParadas(Paradas posicionParada) {
+    this.posicionParada = posicionParada;
   }
 }

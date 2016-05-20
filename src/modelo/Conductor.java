@@ -17,4 +17,13 @@ public class Conductor {
 
     busTurno = new ArrayList<>();
   }
+
+  public String getNombre() {
+    return nombre;
+  }
+
+  public String toString() {
+    return "Nombre: " + this.nombre + ", DNI: " + this.dni;
+  }
+
 }
