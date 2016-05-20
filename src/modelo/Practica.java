@@ -5,11 +5,11 @@ import java.util.ArrayList;
 /**
  * Created by poo2 on 17/05/2016.
  */
-public class Practicas extends Conductor {
+public class Practica extends Conductor {
 
-  private ArrayList<Lineas> lineas;
+  private ArrayList<Linea> lineas;
 
-  public Practicas(String dni, String nombre) {
+  public Practica(String dni, String nombre) {
     super(dni, nombre);
 
     lineas = new ArrayList<>();

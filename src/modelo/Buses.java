@@ -10,13 +10,13 @@ public class Buses {
   private String  matricula;
   private int plazas;
 
-  private Lineas lineas;
+  private Linea linea;
   private ArrayList<BusTurno> busTurnos;
 
-  public Buses(String matricula, int plazas, Lineas lineas) {
+  public Buses(String matricula, int plazas, Linea linea) {
     this.matricula = matricula;
     this.plazas = plazas;
-    this.lineas = lineas;
+    this.linea = linea;
 
     busTurnos = new ArrayList<>();
   }
