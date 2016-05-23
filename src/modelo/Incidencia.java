@@ -1,5 +1,6 @@
 package modelo;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
@@ -8,13 +9,19 @@ import java.util.ArrayList;
 public class Incidencia {
   private int codigo;
   private String nombre;
+  private LocalDate fecha;
+  private TurnoNoche tNoche;
 
-  private ArrayList<TurnoNoche> turnoNoche;
 
-  public Incidencia(int codigo, String nombre) {
+
+  public Incidencia(int codigo, String nombre, LocalDate fecha,
+                    TurnoNoche tNoche) throws Exception{
+    if (nombre == null || fecha ==null || tNoche == null){
+      throw new Exception();
+    }
     this.codigo = codigo;
     this.nombre = nombre;
-
-    turnoNoche = new ArrayList<>();
+    this.fecha = fecha;
+    this.tNoche = tNoche;
   }
 }
