@@ -4,17 +4,21 @@ import java.util.ArrayList;
 
 public class Parada {
   private String nomParada;
-  private Parada posicionParada;
 
-  private ArrayList<Linea> lineas;
+  private ArrayList<ParadaEnLinea> paradasLineas;
+
 
   public Parada(String nomParada) {
     this.nomParada = nomParada;
 
-    lineas = new ArrayList<>();
+    paradasLineas = new ArrayList<>();
   }
 
-  public void addParadas(Parada posicionParada) {
-    this.posicionParada = posicionParada;
+  public void addParadas(ParadaEnLinea posParada)
+      throws Exception {
+    if (posParada == null) {
+      throw new Exception();
+    }
+    paradasLineas.add(posParada);
   }
 }
