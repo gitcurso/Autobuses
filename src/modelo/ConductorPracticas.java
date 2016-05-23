@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public class ConductorPracticas extends Conductor {
 
-  private ArrayList<Asignacion> lineas;
+  private ArrayList<Asignadas> lineas;
 
   public ConductorPracticas(String dni, String nombre) throws Exception {
     super(dni, nombre);
@@ -15,7 +15,7 @@ public class ConductorPracticas extends Conductor {
     lineas = new ArrayList<>();
   }
 
-  public void addAsignacion(Asignacion linea) throws Exception{
+  public void addAsignacion(Asignadas linea) throws Exception{
     if(linea == null || lineas.size() >= 4){
       throw new Exception();
     }

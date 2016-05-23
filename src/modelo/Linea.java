@@ -10,7 +10,7 @@ public class Linea {
   private int numLinea;
 
   // Resultado de la normalización
-  private ArrayList<Asignacion> asignaciones;
+  private ArrayList<Asignadas> asignaciones;
   private ArrayList<ConductorVeterano> conductorVeteranos;
   private ArrayList<Autobus> autobuses;
   private ArrayList<ParadaEnLinea> paradas;
