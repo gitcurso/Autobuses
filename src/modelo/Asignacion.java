@@ -6,16 +6,16 @@ package modelo;
 public class Asignacion {
   private float horas;
 
-  private Practica practicas;
+  private ConductorPracticas practicas;
   private Linea lineas;
 
-  public Asignacion(float horas, Practica practica, Linea linea) throws Exception {
+  public Asignacion(float horas, ConductorPracticas conductorPracticas, Linea linea) throws Exception {
     if (horas <= 100){
       throw new Exception();
     }
 
     this.horas = horas;
-    this.practicas = practica;
+    this.practicas = conductorPracticas;
     this.lineas = linea;
   }
 }

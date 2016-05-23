@@ -11,7 +11,7 @@ public class Linea {
 
   // Resultado de la normalización
   private ArrayList<Asignacion> asignaciones;
-  private ArrayList<Veterano> veteranos;
+  private ArrayList<ConductorVeterano> conductorVeteranos;
   private ArrayList<Autobus> autobuses;
   private ArrayList<ParadaEnLinea> paradas;
 
