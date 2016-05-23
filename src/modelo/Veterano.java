@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Veterano extends Conductor {
   private ArrayList<Linea> lineas;
 
-  public Veterano(String dni, String nombre) {
+  public Veterano(String dni, String nombre) throws Exception {
     super(dni, nombre);
 
     lineas = new ArrayList<>();

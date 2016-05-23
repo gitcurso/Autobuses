@@ -9,7 +9,7 @@ public class Practica extends Conductor {
 
   private ArrayList<Linea> lineas;
 
-  public Practica(String dni, String nombre) {
+  public Practica(String dni, String nombre) throws Exception {
     super(dni, nombre);
 
     lineas = new ArrayList<>();

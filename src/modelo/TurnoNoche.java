@@ -18,6 +18,9 @@ public class TurnoNoche extends Turno {
                     TipoTurno tipoTurno, Autobus bus) throws Exception{
     super (conductor, fecha, tipoTurno, bus );
 
+    if (tipoTurno != TipoTurno.NOCHE) {
+      throw new Exception();
+    }
     incidencias = new ArrayList<Incidencia>();
   }
 

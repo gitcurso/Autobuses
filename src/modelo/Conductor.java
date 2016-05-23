@@ -11,7 +11,11 @@ public class Conductor {
 
   private ArrayList<Turno> busTurno;
 
-  public Conductor(String dni, String nombre) {
+
+  public Conductor(String dni, String nombre) throws Exception{
+    if (dni == null || nombre == null) {
+      throw new Exception();
+    }
     this.dni = dni;
     this.nombre = nombre;
 
@@ -20,6 +24,15 @@ public class Conductor {
 
   public String getNombre() {
     return nombre;
+  }
+
+  public void addTurno(Turno turno) throws Exception{
+    if (turno == null) {
+      throw new Exception();
+    }
+
+    busTurno.add(turno);
+
   }
 
   public String toString() {
