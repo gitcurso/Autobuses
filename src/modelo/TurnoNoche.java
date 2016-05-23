@@ -5,7 +5,7 @@ package modelo;
  */
 public class TurnoNoche {
 
-  private BusTurno busTurno;
+  private Turno busTurno;
 
   public TurnoNoche() {
 

@@ -9,7 +9,7 @@ public class Conductor {
   private String dni;
   private String nombre;
 
-  private ArrayList<BusTurno> busTurno;
+  private ArrayList<Turno> busTurno;
 
   public Conductor(String dni, String nombre) {
     this.dni = dni;

@@ -11,7 +11,7 @@ public class Autobus{
   private int plazas;
 
   private Linea linea;
-  private ArrayList<BusTurno> busTurnos;
+  private ArrayList<Turno> busTurnos;
 
 
   public Autobus(String matricula, int plazas, Linea linea) throws Exception {
@@ -26,7 +26,7 @@ public class Autobus{
     busTurnos = new ArrayList<>();
   }
 
-  public void addTurno ( BusTurno turno) throws Exception {
+  public void addTurno ( Turno turno) throws Exception {
     if (turno==null) {
       throw new Exception();
     }
