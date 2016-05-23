@@ -8,7 +8,10 @@ public class BusTurno {
   private Conductor conductor;
   private Fecha fecha;
   private TipoTurno tipoTurno;
-  public BusTurno(Conductor conductor, Fecha fecha, TipoTurno tipoTurno, Bus bus) {
+  public BusTurno(Conductor conductor, Fecha fecha,
+       TipoTurno tipoTurno, Autobus bus) {
 
   }
+
+
 }
