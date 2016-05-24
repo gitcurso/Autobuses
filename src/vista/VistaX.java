@@ -3,6 +3,8 @@ package vista;
 /**
  * Created by poo2 on 24/05/2016.
  */
+import static javax.swing.JOptionPane.showMessageDialog;
+
 import controlador.Controlador;
 
 import javax.swing.JButton;
@@ -43,10 +45,11 @@ public class VistaX extends JFrame implements ActionListener {
 
   public void actionPerformed(ActionEvent e) {
 
-    try{
+    try {
       c.addLinea(Integer.parseInt(texto.getText()));
-    }catch(Exception error){
-      System.out.println("Error");
+      showMessageDialog(this, "Guardado correctamente");
+    } catch(Exception error) {
+      showMessageDialog(this, "Error al introducir datos");
     }
   }
 }
