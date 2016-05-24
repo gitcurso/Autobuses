@@ -27,4 +27,12 @@ public class Linea {
     autobuses = new ArrayList<>();
     paradas = new ArrayList<>();
   }
+
+  public void addAutobus(Autobus bus)
+      throws Exception{
+    if (bus == null) {
+      throw new Exception();
+    }
+    this.autobuses.add(bus);
+  }
 }
