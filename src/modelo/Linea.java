@@ -15,7 +15,16 @@ public class Linea {
   private ArrayList<Autobus> autobuses;
   private ArrayList<ParadaEnLinea> paradas;
 
-  public Linea(int numLinea) {
+  public Linea(int numLinea) throws Exception {
+    if (numLinea < 0) {
+      throw new Exception();
+    }
+
     this.numLinea = numLinea;
+
+    asignaciones = new ArrayList<>();
+    conductorVeteranos = new ArrayList<>();
+    autobuses = new ArrayList<>();
+    paradas = new ArrayList<>();
   }
 }
