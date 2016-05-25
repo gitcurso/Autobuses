@@ -24,7 +24,7 @@ public class Linea extends JFrame implements ActionListener {
     ctrl = c;
 
     setContentPane(linea);
-    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     pack();
     setLocationRelativeTo(null);
     setVisible(true);
