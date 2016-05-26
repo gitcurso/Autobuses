@@ -1,25 +1,54 @@
 package vista;
 
+import controlador.Controlador;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import static javax.swing.JOptionPane.showMessageDialog;
 
 /**
  * Created by poo2 on 25/05/2016.
  */
-public class Autobus {
+public class Autobus extends JFrame implements ActionListener {
   private JPanel autobus;
   private JTextField matricula;
   private JTextField plazas;
   private JButton darDeAltaAutobúsButton;
   private JTextField linea;
+  private Controlador ctrl;
+
+  public Autobus(String titulo, Controlador c) {
+    super(titulo);
+    setContentPane(autobus);
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    pack();
+    setLocationRelativeTo(null);
+    setVisible(true);
+
+    ctrl = c;
+
+    darDeAltaAutobúsButton.addActionListener(this);
+  }
 
   public static void main(String[] args) {
-    JFrame frame = new JFrame("Autobus");
-    frame.setContentPane(new Autobus().autobus);
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.pack();
-    frame.setLocationRelativeTo(null);
-    frame.setVisible(true);
+    Autobus b = new Autobus("Autobus nuevo", new Controlador());
+  }
+
+  @Override
+  public void actionPerformed(ActionEvent e) {
+    try {
+      ctrl.addAutobus(matricula.getText(),
+          Integer.parseInt(plazas.getText()),
+          Integer.parseInt(linea.getText()));
+
+      showMessageDialog(this, "Datos introducidos");
+    } catch (Exception error) {
+      showMessageDialog(this, "Error al introducir datos");
+    }
+
   }
 
   {
@@ -132,13 +161,13 @@ public class Autobus {
     gbc.gridy = 8;
     gbc.fill = GridBagConstraints.VERTICAL;
     autobus.add(spacer8, gbc);
-    comboBox1 = new JComboBox();
+    linea = new JTextField();
     gbc = new GridBagConstraints();
     gbc.gridx = 3;
     gbc.gridy = 5;
     gbc.anchor = GridBagConstraints.WEST;
     gbc.fill = GridBagConstraints.HORIZONTAL;
-    autobus.add(comboBox1, gbc);
+    autobus.add(linea, gbc);
   }
 
   /**

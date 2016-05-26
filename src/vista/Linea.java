@@ -14,8 +14,9 @@ import java.awt.event.ActionListener;
  */
 public class Linea extends JFrame implements ActionListener {
   private JPanel linea;
-  private JTextField numLinea;
+  private JTextField l;
   private JButton darDeAltaLaButton;
+  private JLabel lineatext;
   private Controlador ctrl;
 
   public Linea(String titulo, Controlador c) {
@@ -40,7 +41,7 @@ public class Linea extends JFrame implements ActionListener {
   @Override
   public void actionPerformed(ActionEvent e) {
     try {
-      ctrl.addLinea(Integer.parseInt(numLinea.getText()));
+      ctrl.addLinea(Integer.parseInt(l.getText()));
       showMessageDialog(this, "Datos introducidos");
     } catch (Exception error) {
       showMessageDialog(this, "Error al introducir datos");
@@ -64,14 +65,14 @@ public class Linea extends JFrame implements ActionListener {
   private void $$$setupUI$$$() {
     linea = new JPanel();
     linea.setLayout(new GridBagLayout());
-    final JLabel label1 = new JLabel();
-    label1.setText("Número de línea:");
+    lineatext = new JLabel();
+    lineatext.setText("Número de línea:");
     GridBagConstraints gbc;
     gbc = new GridBagConstraints();
     gbc.gridx = 0;
     gbc.gridy = 0;
     gbc.anchor = GridBagConstraints.WEST;
-    linea.add(label1, gbc);
+    linea.add(lineatext, gbc);
     final JPanel spacer1 = new JPanel();
     gbc = new GridBagConstraints();
     gbc.gridx = 1;
@@ -84,14 +85,14 @@ public class Linea extends JFrame implements ActionListener {
     gbc.gridy = 1;
     gbc.fill = GridBagConstraints.VERTICAL;
     linea.add(spacer2, gbc);
-    numLinea = new JTextField();
+    l = new JTextField();
     gbc = new GridBagConstraints();
     gbc.gridx = 2;
     gbc.gridy = 0;
     gbc.anchor = GridBagConstraints.WEST;
     gbc.fill = GridBagConstraints.HORIZONTAL;
     gbc.ipadx = 20;
-    linea.add(numLinea, gbc);
+    linea.add(l, gbc);
     darDeAltaLaButton = new JButton();
     darDeAltaLaButton.setText("Dar de alta la línea");
     gbc = new GridBagConstraints();
