@@ -1,6 +1,7 @@
 package modelo;
 
 import java.util.ArrayList;
+import modelo.excepciones.CodigoLineaInvalida;
 
 /**
  * Created by poo2 on 17/05/2016.
@@ -15,9 +16,9 @@ public class Linea {
   private ArrayList<Autobus> autobuses;
   private ArrayList<ParadaEnLinea> paradas;
 
-  public Linea(int numLinea) throws Exception {
+  public Linea(int numLinea) throws CodigoLineaInvalida {
     if (numLinea < 0) {
-      throw new Exception();
+      throw new CodigoLineaInvalida();
     }
 
     this.numLinea = numLinea;

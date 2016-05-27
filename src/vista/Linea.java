@@ -3,6 +3,7 @@ package vista;
 import static javax.swing.JOptionPane.showMessageDialog;
 
 import controlador.Controlador;
+import modelo.excepciones.CodigoLineaInvalida;
 
 import javax.swing.*;
 import java.awt.*;
@@ -43,6 +44,10 @@ public class Linea extends JFrame implements ActionListener {
     try {
       ctrl.addLinea(Integer.parseInt(l.getText()));
       showMessageDialog(this, "Datos introducidos");
+    } catch (NumberFormatException error) {
+      showMessageDialog(this, "El código de línea tiene que ser un número");
+    } catch (CodigoLineaInvalida error) {
+      showMessageDialog(this, "El código de la línea es inválido");
     } catch (Exception error) {
       showMessageDialog(this, "Error al introducir datos");
     }
