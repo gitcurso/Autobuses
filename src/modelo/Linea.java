@@ -29,6 +29,10 @@ public class Linea {
     paradas = new ArrayList<>();
   }
 
+  public int getNumLinea() {
+    return numLinea;
+  }
+
   public void addAutobus(Autobus bus)
       throws Exception{
     if (bus == null) {

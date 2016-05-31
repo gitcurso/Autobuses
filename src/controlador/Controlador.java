@@ -1,5 +1,7 @@
 package controlador;
 
+import java.io.File;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.concurrent.CompletableFuture;
 
@@ -34,6 +36,16 @@ public class Controlador {
 
   public Integer[] listarLineas() {
     return lineas.keySet().toArray(new Integer[0]);
+  }
+
+  public void guardarLineas() throws Exception {
+    PrintWriter pw = new PrintWriter(new File("C:/Users/Poo2/lineas.txt"));
+
+    for(int l: listarLineas()) {
+      pw.println(l);
+    }
+
+    pw.close();
   }
 
   public void addAutobus(String matricula, int plazas, int numLinea)

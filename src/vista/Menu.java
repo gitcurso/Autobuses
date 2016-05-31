@@ -7,6 +7,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import static javax.swing.JOptionPane.showMessageDialog;
+
 /**
  * Created by poo2 on 25/05/2016.
  */
@@ -15,6 +17,7 @@ public class Menu extends JFrame implements ActionListener {
   private JButton altaDeLíneasButton;
   private JButton altaDeAutobusesButton;
   private JButton salirButton;
+  private JButton guardarLíneasButton;
   private Controlador ctrl;
 
   {
@@ -53,7 +56,7 @@ public class Menu extends JFrame implements ActionListener {
     salirButton.setText("Salir");
     gbc = new GridBagConstraints();
     gbc.gridx = 1;
-    gbc.gridy = 6;
+    gbc.gridy = 8;
     gbc.fill = GridBagConstraints.HORIZONTAL;
     menu.add(salirButton, gbc);
     final JPanel spacer1 = new JPanel();
@@ -80,7 +83,7 @@ public class Menu extends JFrame implements ActionListener {
     final JPanel spacer3 = new JPanel();
     gbc = new GridBagConstraints();
     gbc.gridx = 1;
-    gbc.gridy = 7;
+    gbc.gridy = 9;
     gbc.fill = GridBagConstraints.VERTICAL;
     menu.add(spacer3, gbc);
     final JPanel spacer4 = new JPanel();
@@ -101,6 +104,19 @@ public class Menu extends JFrame implements ActionListener {
     gbc.gridy = 5;
     gbc.fill = GridBagConstraints.VERTICAL;
     menu.add(spacer6, gbc);
+    guardarLíneasButton = new JButton();
+    guardarLíneasButton.setText("Guardar líneas");
+    gbc = new GridBagConstraints();
+    gbc.gridx = 1;
+    gbc.gridy = 6;
+    gbc.fill = GridBagConstraints.HORIZONTAL;
+    menu.add(guardarLíneasButton, gbc);
+    final JPanel spacer7 = new JPanel();
+    gbc = new GridBagConstraints();
+    gbc.gridx = 1;
+    gbc.gridy = 7;
+    gbc.fill = GridBagConstraints.VERTICAL;
+    menu.add(spacer7, gbc);
   }
 
   /**
@@ -115,6 +131,19 @@ public class Menu extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
       new Linea("Linea nueva", ctrl);
+    }
+  }
+
+  private class AccionGuardarLineas implements ActionListener {
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+      try {
+        ctrl.guardarLineas();
+        showMessageDialog(null, "Se han guardado las líneas correctamente.");
+      } catch (Exception exc) {
+        showMessageDialog(null, "Ha habido un error al escribir el archivo.");
+      }
     }
   }
 
@@ -143,6 +172,7 @@ public class Menu extends JFrame implements ActionListener {
     salirButton.addActionListener(this);
     altaDeLíneasButton.addActionListener(new AccionLineaNueva());
     altaDeAutobusesButton.addActionListener(new AccionAutobusNuevo());
+    guardarLíneasButton.addActionListener(new AccionGuardarLineas());
   }
 
   @Override
