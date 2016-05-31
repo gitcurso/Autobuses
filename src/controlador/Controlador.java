@@ -32,6 +32,10 @@ public class Controlador {
     this.lineas.put(numLinea, new Linea(numLinea));
   }
 
+  public Integer[] listarLineas() {
+    return lineas.keySet().toArray(new Integer[0]);
+  }
+
   public void addAutobus(String matricula, int plazas, int numLinea)
       throws Exception {
 

@@ -17,7 +17,7 @@ public class Autobus extends JFrame implements ActionListener {
   private JTextField matricula;
   private JTextField plazas;
   private JButton darDeAltaAutobúsButton;
-  private JTextField linea;
+  private JComboBox<Integer> comboLinea;
   private Controlador ctrl;
 
   public Autobus(String titulo, Controlador c) {
@@ -26,11 +26,16 @@ public class Autobus extends JFrame implements ActionListener {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     pack();
     setLocationRelativeTo(null);
-    setVisible(true);
-
     ctrl = c;
 
+    Integer[] lineas = ctrl.listarLineas();
+    for (Integer i : lineas) {
+      comboLinea.addItem(i);
+    }
+
     darDeAltaAutobúsButton.addActionListener(this);
+
+    setVisible(true);
   }
 
   public static void main(String[] args) {
@@ -42,8 +47,7 @@ public class Autobus extends JFrame implements ActionListener {
     try {
       ctrl.addAutobus(matricula.getText(),
           Integer.parseInt(plazas.getText()),
-          Integer.parseInt(linea.getText()));
-
+          (Integer) comboLinea.getSelectedItem());
       showMessageDialog(this, "Datos introducidos");
     } catch (Exception error) {
       showMessageDialog(this, "Error al introducir datos");
@@ -161,13 +165,13 @@ public class Autobus extends JFrame implements ActionListener {
     gbc.gridy = 8;
     gbc.fill = GridBagConstraints.VERTICAL;
     autobus.add(spacer8, gbc);
-    linea = new JTextField();
+    comboLinea = new JComboBox();
     gbc = new GridBagConstraints();
     gbc.gridx = 3;
     gbc.gridy = 5;
     gbc.anchor = GridBagConstraints.WEST;
     gbc.fill = GridBagConstraints.HORIZONTAL;
-    autobus.add(linea, gbc);
+    autobus.add(comboLinea, gbc);
   }
 
   /**

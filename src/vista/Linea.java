@@ -29,9 +29,9 @@ public class Linea extends JFrame implements ActionListener {
     setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     pack();
     setLocationRelativeTo(null);
-    setVisible(true);
-    darDeAltaLaButton.addActionListener(this);
 
+    darDeAltaLaButton.addActionListener(this);
+    setVisible(true);
   }
 
   public static void main(String[] args) {
