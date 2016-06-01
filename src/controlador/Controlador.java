@@ -32,6 +32,8 @@ public class Controlador {
     }
 
     this.lineas.put(numLinea, new Linea(numLinea));
+
+    guardarLineas();
   }
 
   public Integer[] listarLineas() {
@@ -48,7 +50,7 @@ public class Controlador {
     pw.close();
   }
 
-  public void addAutobus(String matricula, int plazas, int numLinea)
+  public void addAutobús(String matricula, int plazas, int numLinea)
       throws Exception {
 
     Linea linea = this.lineas.get(numLinea);

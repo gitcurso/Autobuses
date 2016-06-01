@@ -45,7 +45,7 @@ public class Autobus extends JFrame implements ActionListener {
   @Override
   public void actionPerformed(ActionEvent e) {
     try {
-      ctrl.addAutobus(matricula.getText(),
+      ctrl.addAutobús(matricula.getText(),
           Integer.parseInt(plazas.getText()),
           (Integer) comboLinea.getSelectedItem());
       showMessageDialog(this, "Datos introducidos");
